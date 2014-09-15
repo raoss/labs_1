@@ -1,0 +1,391 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Inputs for Simple Beam UDL"
+        android:id="@+id/udl_input"
+        android:layout_gravity="left"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Uniform Load,w ="
+        android:id="@+id/udl_input_unif_load"
+        android:layout_gravity="left"
+        android:textStyle="bold"
+        android:textSize="10dp"
+        android:layout_below="@id/udl_input"/>
+
+    <EditText
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:textSize="10dp"
+        android:digits="true"
+        android:id="@+id/udl_input_nbr_unif_load"
+        android:layout_toEndOf="@+id/udl_output_nbr_delta_max"
+        android:layout_below="@+id/udl_input"
+        android:layout_alignLeft="@+id/udl_input_nbr_span"
+        android:layout_alignStart="@+id/udl_input_nbr_span" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="kN/m"
+        android:textSize="10dp"
+        android:id="@+id/udl_input_load_si"
+        android:layout_toRightOf="@+id/udl_input_nbr_unif_load"
+        android:layout_alignBottom="@+id/udl_input_nbr_unif_load"
+        android:gravity="center" />
+
+    <!--Span Information-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Span,I                    ="
+        android:id="@+id/udl_input_span"
+        android:layout_gravity="left"
+        android:textStyle="bold"
+        android:textSize="10dp"
+        android:layout_below="@id/udl_input_unif_load"/>
+
+    <EditText
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:textSize="10dp"
+        android:digits="true"
+        android:id="@+id/udl_input_nbr_span"
+        android:layout_toStartOf="@+id/udl_input_load_si"
+        android:layout_below="@+id/udl_input_nbr_unif_load"
+        android:layout_toRightOf="@+id/udl_input_moi"
+        android:layout_toEndOf="@+id/udl_input_moi" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="m"
+        android:id="@+id/udl_input_meter_si"
+        android:gravity="center"
+        android:layout_below="@+id/udl_input_load_si"
+        android:textSize="10dp"
+        android:layout_toRightOf="@+id/udl_input_nbr_span"
+        android:layout_alignBottom="@+id/udl_input_nbr_span" />
+
+    <!--Factors Input Information-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Factor                    ="
+        android:id="@+id/udl_input_factor"
+        android:layout_gravity="left"
+        android:textStyle="bold"
+        android:textSize="10dp"
+        android:layout_below="@id/udl_input_span"/>
+
+    <EditText
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:textSize="10dp"
+        android:digits="true"
+        android:id="@+id/udl_input_nbr_factor"
+        android:gravity="center"
+        android:layout_below="@+id/udl_input_nbr_span"
+        android:layout_toLeftOf="@+id/udl_input_meter_si"
+        android:layout_toStartOf="@+id/udl_input_meter_si" />
+
+    <!-- Calculate deflection-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Calculate deflection:"
+        android:id="@+id/udl_input_calc_deflection"
+        android:layout_gravity="left"
+        android:textStyle="bold"
+        android:textSize="10dp"
+        android:layout_below="@id/udl_input_factor"/>
+
+    <!-- Calculate deflection-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Concrete Grade,fck="
+        android:id="@+id/udl_input_concrete_grd"
+        android:layout_gravity="left"
+        android:textStyle="bold"
+        android:textSize="10dp"
+        android:layout_below="@id/udl_input_calc_deflection"/>
+
+    <EditText
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:textSize="10dp"
+        android:digits="true"
+        android:id="@+id/udl_input_nbr_conc_grd"
+        android:gravity="center"
+        android:layout_toEndOf="@+id/udl_input_calc_deflection"
+        android:layout_above="@+id/udl_input_ec"
+        android:layout_toLeftOf="@+id/udl_input_si_knmm"
+        android:layout_toStartOf="@+id/udl_input_si_knmm" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="N/mm^2"
+        android:id="@+id/udl_input_si_nmm"
+        android:gravity="center"
+        android:textSize="10dp"
+        android:layout_toRightOf="@+id/udl_input_nbr_conc_grd"
+        android:layout_alignBottom="@+id/udl_input_nbr_conc_grd"
+        />
+
+
+    <!--EC -->
+
+    <TextView
+        android:layout_width="135dp"
+        android:layout_height="35dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Ec  ="
+        android:id="@+id/udl_input_ec"
+        android:layout_gravity="left"
+        android:textStyle="bold"
+        android:textSize="10dp"
+        android:layout_below="@id/udl_input_concrete_grd"
+        android:gravity="center" />
+
+    <EditText
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:textSize="10dp"
+        android:digits="true"
+        android:id="@+id/udl_input_nbr_ec"
+        android:layout_toEndOf="@+id/udl_input_moi"
+        android:layout_below="@+id/udl_input_nbr_conc_grd"
+        android:layout_toRightOf="@+id/udl_input_moi" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="kN/mm^2"
+        android:id="@+id/udl_input_si_knmm"
+        android:gravity="center"
+        android:layout_alignBottom="@+id/udl_input_nbr_ec"
+        android:layout_toRightOf="@+id/udl_input_nbr_ec"
+        android:layout_below="@+id/udl_input_si_nmm"
+        android:textSize="10dp" />
+
+    <!--Moment of Inertia-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Moment of Inertia,I="
+        android:id="@+id/udl_input_moi"
+        android:layout_gravity="left"
+        android:textStyle="bold"
+        android:textSize="10dp"
+        android:layout_below="@id/udl_input_ec"
+        android:gravity="center" />
+
+    <EditText
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:textSize="10dp"
+        android:digits="true"
+        android:id="@+id/udl_input_nbr_moi"
+        android:layout_below="@+id/udl_input_ec"
+        android:layout_alignLeft="@+id/udl_input_nbr_ec"
+        android:layout_alignStart="@+id/udl_input_nbr_ec" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="mm^4"
+        android:id="@+id/udl_input_si_mm4"
+        android:gravity="center"
+        android:layout_below="@+id/udl_input_si_knmm"
+        android:layout_toRightOf="@+id/udl_input_nbr_moi"
+        android:layout_alignBottom="@+id/udl_input_nbr_moi"
+        android:textSize="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:text="Calculate"
+        android:id="@+id/udl_calculate"
+        android:layout_toEndOf="@+id/udl_input_si_knmm"
+        android:layout_below="@+id/udl_input_nbr_moi"
+        android:layout_toRightOf="@+id/udl_input_si_knmm"
+        android:gravity="center|fill"
+        android:textStyle="bold"
+        android:background="#ff3c18ff"
+        android:focusable="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Output:"
+        android:id="@+id/udl_output"
+        android:layout_gravity="left"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        android:layout_below="@+id/udl_calculate"
+        android:gravity="left" />
+
+    <!-- Out Put fields - R=V=-->
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="R = V ="
+        android:id="@+id/udl_output_r_v"
+        android:layout_gravity="left"
+        android:textStyle="bold"
+        android:textSize="12dp"
+        android:layout_below="@id/udl_output"
+        android:gravity="center" />
+
+    <EditText
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:ems="10"
+        android:textSize="10dp"
+        android:id="@+id/udl_output_nbr_r_v"
+        android:layout_toStartOf="@+id/udl_ouput_si_m"
+        android:layout_below="@+id/udl_output"
+        android:layout_toLeftOf="@+id/udl_ouput_si_m" />
+
+    <TextView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="kN"
+        android:id="@+id/udl_ouput_si_kN"
+        android:gravity="center"
+        android:layout_toEndOf="@+id/udl_ouput_si_m"
+        android:textSize="12dp"
+        android:layout_above="@+id/udl_output_nbr_delta_max"
+        android:layout_alignLeft="@+id/udl_ouput_si_m"
+        android:layout_alignStart="@+id/udl_ouput_si_m" />
+
+    <!-- Out Put fields - Mmax= -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Mmax = "
+        android:id="@+id/udl_output_m_max"
+        android:layout_gravity="left"
+        android:textStyle="bold"
+        android:textSize="12dp"
+        android:layout_alignBottom="@+id/udl_ouput_si_kN"
+        android:layout_toLeftOf="@+id/udl_output_nbr_m_max"
+        android:layout_toStartOf="@+id/udl_output_nbr_m_max"
+        android:gravity="center" />
+
+    <EditText
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:ems="10"
+        android:textSize="10dp"
+        android:id="@+id/udl_output_nbr_m_max"
+        android:layout_below="@+id/udl_output"
+        android:layout_toLeftOf="@+id/udl_ouput_si_kN_m"
+        android:layout_toStartOf="@+id/udl_ouput_si_kN_m" />
+
+    <TextView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="kN-m"
+        android:textSize="12dp"
+        android:id="@+id/udl_ouput_si_kN_m"
+        android:gravity="center"
+        android:layout_toEndOf="@+id/udl_output_nbr_m_max"
+        android:layout_alignBottom="@+id/udl_output_nbr_m_max"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="37dp" />
+
+    <!-- Out Put fields -  Delta max= -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="∆max = "
+        android:id="@+id/udl_output_delta_max"
+        android:layout_gravity="left"
+        android:textStyle="bold"
+        android:textSize="12dp"
+        android:layout_below="@id/udl_output_m_max"
+        android:gravity="center" />
+
+    <EditText
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:ems="10"
+        android:textSize="10dp"
+        android:id="@+id/udl_output_nbr_delta_max"
+        android:layout_below="@+id/udl_output_nbr_r_v"
+        android:layout_toRightOf="@+id/udl_output_r_v"
+        android:layout_toEndOf="@+id/udl_output_r_v" />
+
+    <TextView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="m"
+        android:textSize="12dp"
+        android:id="@+id/udl_ouput_si_m"
+        android:gravity="center"
+        android:layout_below="@+id/udl_ouput_si_kN"
+        android:layout_toRightOf="@+id/udl_output_nbr_delta_max"
+        android:layout_toEndOf="@+id/udl_output_nbr_delta_max" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Simple Beam UDL"
+        android:id="@+id/udl_simple_beam"
+        android:layout_gravity="left"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        android:layout_below="@+id/udl_output_delta_max" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView"
+        android:layout_gravity="left|top"
+        android:src="@drawable/ic_beamudl"
+        android:layout_below="@+id/udl_simple_beam"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
